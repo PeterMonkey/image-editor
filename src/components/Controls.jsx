@@ -1,11 +1,10 @@
 import Button from "./Button";
 import { useState } from "react";
 
-import { GrRotateLeft, GrRotateRight } from 'react-icons/gr'
-import { CgMergeHorizontal, CgMergeVertical } from 'react-icons/cg'
 import { useSelector } from "react-redux";
 import editorAction from '../redux/actions/editorAction'
 import inputChange from "../redux/actions/progressbarAction";
+import RotateControls from "./RotateControls";
 
 const Controls = () => {
 
@@ -95,17 +94,7 @@ const Controls = () => {
                 </div>
             </div>
         </div>
-        <div className=" w-full h-1/3">
-            <div className="text-xl">
-                <h1> Rotate & Flip</h1>
-            </div>
-            <div className="grid grid-cols-4 gap-2 h-12 text-gray-500 mt-2">
-                <Button text={<GrRotateLeft/>}/>
-                <Button text={<GrRotateRight/>}/>
-                <Button text={<CgMergeHorizontal/>}/>
-                <Button text={<CgMergeVertical/>}/>
-            </div>
-        </div>
+        <RotateControls/>
       </div>
     </div>
   );
