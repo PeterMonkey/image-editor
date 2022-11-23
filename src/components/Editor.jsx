@@ -1,18 +1,26 @@
-import { useRef, useState } from "react";
-import Button from "./Button";
+import { useRef } from "react";
 import Controls from "./Controls";
 import Image from "./Image";
+import { getImage } from "../redux/features/imageState/imageSlice";
+import { useSelector, useDispatch } from "react-redux";
+import ButtonsSet from "./ButtonsSet";
 
 const Editor = () => {
 
-  const [file, setFile] = useState('')
+  const dispatch = useDispatch()
+
+  const setImage = (file) => {
+    dispatch(getImage(file))
+  }
+
+  const {image} = useSelector(state => state.image)
 
   const ref = useRef()
   const handleClick = (e) => {
     ref.current.click()
   }
 
-  console.log(file)
+  console.log(image)
 
   return (
     <div className="w-3/4 h-[500px] bg-slate-50 rounded-xl">
@@ -21,19 +29,10 @@ const Editor = () => {
           <h1 className="text-2xl font-bold">Image Editor</h1>
         </div>
         <div className="flex justify-between items-center w-11/12 h-2/3">
-          <Image image={file}/>
-          <Controls />
+          <Image image={image}/>
+          <Controls image={image}/>
         </div>
-        <div className="flex justify-between w-11/12 h-20 text-sm">
-            <div className=" flex items-center ">
-                <Button text={'RESET FILTERS'} width={'w-32'} height={'h-12'} font={'text-slate-500'}/>
-            </div>
-            <div className="grid grid-cols-2 gap-2 items-center h-full text-sm">
-              <input ref={ref} onChange={e => setFile(e.target.files[0])} type="file" accept=".jpg,.jpeg,.png" hidden/>
-                <Button click={() => handleClick()} text={'CHOOSE IMAGE'} width={'w-32'} height={'h-12'} bg={'bg-slate-500'} font={'text-slate-50'}/>
-                <Button text={'SAVE IMAGE'} width={'w-32'} height={'h-12'} bg={'bg-[#6B7FD7]'} font={'text-slate-50'}/>
-            </div>
-        </div>
+        <ButtonsSet/>
       </div>
     </div>
   );
