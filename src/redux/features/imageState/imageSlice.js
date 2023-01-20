@@ -14,6 +14,7 @@ export const imageSlice = createSlice({
                 image: action.payload
             }
         }
+
     }
 })
 

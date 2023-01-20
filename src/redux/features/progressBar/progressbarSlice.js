@@ -11,25 +11,25 @@ export const progressbarSlice = createSlice({
     name: "progressbar",
     initialState: barState,
     reducers: {
-       brightnessValue : (state, action) => {
+       brightnessFunc : (state, action) => {
             return{
                 ...state,
                 brightnessValue: action.payload
             }
         },
-        saturationValue: (state, action) => {
+        saturationFunc: (state, action) => {
             return{
                 ...state,
                 saturationValue: action.payload
             }
         },
-        inversionValue: (state, action) => {
+        inversionFunc: (state, action) => {
             return{
                 ...state,
                 inversionValue: action.payload
             }
         },
-        grayscaleValue: (state, action) => {
+        grayscaleFunc: (state, action) => {
             return{
                 ...state,
                 grayscaleValue: action.payload
@@ -38,4 +38,4 @@ export const progressbarSlice = createSlice({
     }
 })
 
-export const { brightnessValue, saturationValue, inversionValue, grayscaleValue } = progressbarSlice.actions
+export const { brightnessFunc, saturationFunc, inversionFunc, grayscaleFunc } = progressbarSlice.actions

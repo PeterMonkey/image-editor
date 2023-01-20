@@ -57,11 +57,17 @@ const Controls = ({image}) => {
                 inputGrayscale(value)
                 setState(grayscaleValue)
                 break;       
+
+            case '':
+                setState(100)
+                break;
         
             default: null
                 break;
         }
     }
+
+    console.log(type)
 
   return (
     <div className={` ${!image? 'pointer-events-none opacity-30': ""} flex flex-col justify-center items-center w-[40%] h-full border-2 border-slate-300 rounded-md`}>

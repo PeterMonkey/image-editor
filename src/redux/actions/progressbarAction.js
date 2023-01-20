@@ -1,24 +1,24 @@
 import { useDispatch } from "react-redux";
-import { brightnessValue, saturationValue, inversionValue, grayscaleValue } from "../features/progressBar/progressbarSlice";
+import { brightnessFunc, saturationFunc, inversionFunc, grayscaleFunc } from "../features/progressBar/progressbarSlice";
 
 const inputChange = () => {
 
     const dispatch = useDispatch()
 
     const inputBrightness = (value) => {
-        dispatch(brightnessValue(value))
+        dispatch(brightnessFunc(value))
     }
 
     const inputSaturation = (value) => {
-        dispatch(saturationValue(value))
+        dispatch(saturationFunc(value))
     }
 
     const inputInversion = (value) => {
-        dispatch(inversionValue(value))
+        dispatch(inversionFunc(value))
     }
 
     const inputGrayscale = (value) => {
-        dispatch(grayscaleValue(value))
+        dispatch(grayscaleFunc(value))
     }
 
     return {

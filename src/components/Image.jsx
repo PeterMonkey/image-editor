@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useRef } from 'react'
+import { useSelector} from 'react-redux'
 
 const Image = ({image}) => {
 
@@ -10,10 +10,12 @@ const Image = ({image}) => {
     const { rotation, orientationX, orientationY } = rfValues
 
     const ref = useRef(null)
+   
+    
     if(image){
+        
         ref.current.src = URL.createObjectURL(image)
         let $elem = document.querySelector(".image")
-
         $elem.style.filter = `
         brightness(${brightnessValue/100})
          saturate(${saturationValue/100}) 
@@ -25,8 +27,9 @@ const Image = ({image}) => {
          scaleY(${orientationY})
          rotate(${rotation}deg)
          `
-    } 
-         
+        
+
+    }     
     
     return(
         <div className=" w-[58%] h-full rounded-md ">

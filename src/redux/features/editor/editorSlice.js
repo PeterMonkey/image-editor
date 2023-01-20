@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const buttonState = {
-    brightnes: {bg:'bg-[#6B7FD7]', font:'text-slate-50'},
+    brightnes: {bg:'', font:'text-slate-400'},
     saturation: { bg: "", font: "text-slate-400" },
     inversion: { bg: "", font: "text-slate-400" },
     grayscale: { bg: "", font: "text-slate-400" },
-    type: 'Brightness'
+    type: ''
   };
 
 export const editorSlice = createSlice({
@@ -51,7 +51,7 @@ export const editorSlice = createSlice({
               inversion: buttonState.inversion,
               type: 'Grayscale'
             }
-          },
+          }
     }
 })
 
