@@ -7,7 +7,7 @@ const RotateControls = () => {
 
     const { rotationToLeft, rotationToRight, turnX, turnY } = rotatefilpAction()
   return (
-    <div className=" w-full h-1/3">
+    <div className=" w-full h-1/3 mt-4 md:mt-2">
       <div className="text-xl">
         <h1> Rotate & Flip</h1>
       </div>

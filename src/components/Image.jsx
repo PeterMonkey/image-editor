@@ -32,7 +32,7 @@ const Image = ({image}) => {
     }     
     
     return(
-        <div className=" w-[58%] h-full rounded-md ">
+        <div className=" w-64 md:w-[100%] h-full rounded-md ">
             <img ref={ref} className='image object-contain h-full w-full'
             type="image" />
         </div>

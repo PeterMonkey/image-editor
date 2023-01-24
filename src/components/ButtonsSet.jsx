@@ -68,17 +68,17 @@ const ButtonsSet = () => {
 
 
   return (
-    <div className="flex justify-between w-11/12 h-20 text-sm">
+    <div className="flex flex-col md:flex-row mt-2 md:mt-0 justify-between w-11/12 h-20 text-sm">
       <div className=" flex items-center ">
         <Button
           click={() => reset()}
           text={"RESET FILTERS"}
-          width={"w-32"}
+          width={"w-full md:w-32"}
           height={"h-12"}
           font={"text-slate-500"}
         />
       </div>
-      <div className="grid grid-cols-2 gap-2 items-center h-full text-sm">
+      <div className="grid md:grid-cols-2 md:gap-2 md:mt-0 mt-1 gap-1 items-center h-full text-sm">
         <input
           ref={ref}
           onChange={(e) => setImage(e.target.files[0])}
@@ -89,7 +89,7 @@ const ButtonsSet = () => {
         <Button
           click={() => handleClick()}
           text={"CHOOSE IMAGE"}
-          width={"w-32"}
+          width={"w-full md:w-32"}
           height={"h-12"}
           bg={"bg-slate-500"}
           font={"text-slate-50"}
@@ -97,7 +97,7 @@ const ButtonsSet = () => {
         <Button
         click={() => saveImage()}
           text={"SAVE IMAGE"}
-          width={"w-32"}
+          width={"w-full md:w-32"}
           height={"h-12"}
           bg={"bg-[#6B7FD7]"}
           font={"text-slate-50"}

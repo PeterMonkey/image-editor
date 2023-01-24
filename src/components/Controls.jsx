@@ -70,7 +70,7 @@ const Controls = ({image}) => {
     console.log(type)
 
   return (
-    <div className={` ${!image? 'pointer-events-none opacity-30': ""} flex flex-col justify-center items-center w-[40%] h-full border-2 border-slate-300 rounded-md`}>
+    <div className={` ${!image? 'pointer-events-none opacity-30': ""} flex flex-col justify-center items-center w-[100%] h-full border-2 border-slate-300 rounded-md`}>
       <div className=" w-[90%] h-[90%]">
         <div className="w-full h-2/3">
             <div className="pb-1 text-xl">
